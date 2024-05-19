@@ -27,7 +27,7 @@ const data = users
   .map(
     (user) => user.name + " " + user.age + " " + user.id + " " + user.isActive
   );
-console.log(data);
+console.log("Sorted data", data);
 console.log(
   "--------------------------------------------------------------------------"
 );
@@ -45,11 +45,26 @@ console.log(
 );
 
 let fool = 1;
-console.log("---------foooooooo----", fool);
+console.log("foooooooo-", fool);
 //Outputs - cannot access fool before initialization.
 
-console.log("---------fooooooool1----", fool1);
+console.log("fooooooool1-", fool1);
 var fool1 = 1;
+// Outputs - undefined
+
+fooo = 3;
+console.log(fooo);
+var fooo;
+// Outputs - 3
+
+console.log(bar);
+const bar = 1;
+// Outputs - cannot access bar before initialization
+
+hoo();
+function hoo() {
+  console.log("Hoo");
+}
 
 console.log(
   "--------------------------------------------------------------------------"
