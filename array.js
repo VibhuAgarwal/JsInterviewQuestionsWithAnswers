@@ -35,6 +35,7 @@ console.log("Old Array1 : ", arr1); //Output - [1, 2, 3]
 const mergeArrays = (ar, ar1) => {
   return ar.concat(...ar1);
   // return [...ar, ...ar1]; // Same approach without mutating the array.
+  // ar.concat(ar1, ar2, ar3); Any number of arrays can be concatenated.
 };
 const ar = [1, 2, 3];
 const ar1 = [4, 5, 6];
@@ -44,3 +45,45 @@ console.log("Old Array 1 : ", ar); //Output - [1,2,3]
 console.log("Old Array 2 : ", ar1); // Output - [4,5,6]
 
 console.log("------------------------------------------");
+
+const users = [
+  {
+    id: 1,
+    name: "Vibhor",
+    age: 29,
+    isActive: true,
+  },
+  {
+    id: 2,
+    name: "Draco",
+    age: 25,
+    isActive: true,
+  },
+  {
+    id: 3,
+    name: "Deepak",
+    age: 24,
+    isActive: false,
+  },
+];
+
+const ifNameExist = users.filter((user) => {
+  return user.name === "Vibhor" ? user.id : null;
+});
+console.log(ifNameExist);
+
+const IfName = (name, users) => {
+  const user1 = users.find((user) => user.name === name);
+  return Boolean(user1);
+};
+console.log(IfName("Vibhor", users));
+//Output - true
+
+const IfName1 = (name, users) => {
+  const user2 = users.findIndex((user) => user.name === name);
+  return user2 >= 0;
+};
+console.log(IfName1("Vibhor", users));
+//Output - true
+
+console.log("--------------------------------------------");
